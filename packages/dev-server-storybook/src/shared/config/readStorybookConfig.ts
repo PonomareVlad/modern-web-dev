@@ -34,7 +34,8 @@ export function readStorybookConfig(pluginConfig: StorybookPluginConfig): Storyb
   const configDir = pluginConfig.configDir
     ? path.resolve(pluginConfig.configDir)
     : defaultConfigDir;
-  const mainJsPath = path.join(configDir, 'main.js');
+  const mainExt = pluginConfig.mainExt ? pluginConfig.mainExt : 'js';
+  const mainJsPath = path.join(configDir, 'main.' + mainExt);
   const managerJsPath = path.join(configDir, 'manager.js');
   const previewJsPath = path.join(configDir, 'preview.js');
   const managerHeadPath = path.join(configDir, 'manager-head.html');

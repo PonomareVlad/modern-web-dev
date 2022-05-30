@@ -62,6 +62,7 @@ async function buildManager(params: BuildmanagerParams) {
 
 export interface BuildParams {
   type: 'web-components' | 'preact';
+  mainExt: 'cjs' | 'js';
   outputDir: string;
   configDir: string;
 }

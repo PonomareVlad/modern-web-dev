@@ -23,12 +23,18 @@ async function main() {
       type: String,
       defaultValue: 'web-components',
     },
+    {
+      name: 'ext',
+      alias: 'e',
+      type: String,
+      defaultValue: 'js',
+    },
   ]);
 
   const configDir = path.resolve(args['config-dir']);
   const outputDir = path.resolve(args['output-dir']);
 
-  await build({ type: args.type, configDir, outputDir });
+  await build({ type: args.type, mainExt: args.ext, configDir, outputDir });
 }
 
 main();
